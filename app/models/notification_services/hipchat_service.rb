@@ -29,7 +29,7 @@ if defined? HipChat
         &nbsp;&nbsp;Times occurred: #{problem.notices_count}
       MSG
 
-      client = HipChat::Client.new(api_token)
+      client = HipChat::Client.new(api_token, :api_version => 'v2')
       client[room_id].send('Errbit', message, :color => 'red', :notify => true)
     end
   end
